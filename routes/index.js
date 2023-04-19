@@ -1,8 +1,10 @@
 var express = require('express');
 var router = express.Router();
+const fetch = require("node-fetch")
 const MyApi = process.env.OWM_API_KEY
 
-module.exports = router;
+
+
 
 router.get('/movies', (req, res) => {
     fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${MyApi}`)
@@ -12,3 +14,4 @@ router.get('/movies', (req, res) => {
       });
    });
    
+   module.exports = router;
